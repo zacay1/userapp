@@ -3,7 +3,7 @@
 Sistema de administración de usuarios 
 
 ## Descripción
-Básica mente esta aplicación ofrece 2 APIs, las cuales son:
+Básicamente esta aplicación ofrece 2 APIs, las cuales son:
 - Api interna Users: Permite administrar usuarios del sistema.
 - Api publica Myself: Permite que los usuarios realicen operaciones sobre sus cuentas: Inicio de sesión y Actualización de Password
 
