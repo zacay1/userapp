@@ -41,11 +41,11 @@ El archivo schema.sql contiene los query de creación de las tablas asociadas al
 - Ir a: http://localhost:8080/company/docs/ui.html
 
 ## Descripción de elementos en la documentación 
-swagger nos permite establecer algunas configuración que permiten hacer mas dinámica la documentación. en la siguiente imagen se pueden observar 2 de estos elementos.  
+swagger nos permite establecer algunas configuración que permiten hacer mas dinámica la documentación. En la siguiente imagen se pueden observar 2 de estos elementos.  
 
 ![](https://gitlab.com/josemiguelhidalgo74/userapp/-/raw/main/ui.jpg)
 
 - El primero nos permite movernos entre las distintas versiones, este proyecto tiene 2, una interna identificado con **i1** y una publica identificada con **v1**.
-- El segundo elementó nos permite establecer un token, en este proyecto son tokens de jwt, swagger  sabe esto y internamente el agrega el texto **Bearer** al principio del token antes de realizar una llamada
+- El segundo elementó nos permite establecer un token, en este proyecto son tokens de jwt, la configuración del swagger entiende esto y internamente el agrega el texto **Bearer** al principio del token antes de realizar una llamada
 
 **Nota:** El método login del Api Myself y el Api interna de Users no requiere un token. 
