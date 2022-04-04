@@ -29,7 +29,7 @@ Parámetros relevantes de la application.properties
 - **user.password.regex:** Expresión regular con la que se verificara el formato correcto de los passwords
 - **server.servlet.context-path:** Contexto de la aplicación 
 - **server.port:** Puerto donde será levantada la aplicación 
-- **show.internal.api:** Allows you to hide the api Users of the documentation, useful when you want to share only the public documentation to the users.
+- **show.internal.api:** Permite ocultar la documentación interna, útil cuando se quiere compartir sólo la documentación pública a los usuarios.
 
 El archivo schema.sql contiene los query de creación de las tablas asociadas al proyecto 
 
