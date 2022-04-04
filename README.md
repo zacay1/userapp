@@ -20,15 +20,16 @@ Los parámetros de configuración se encuentren en el directorio config.
 
 Parámetros relevantes de la application.properties
 
-- spring.datasource.username= usuario de la db
-- spring.datasource.password= clave de acceso de la db
-- spring.h2.console.enabled= bandera que habilita la consola de  la db h2
-- spring.h2.console.path= dirección donde será levanta la interfaz de la consola h2
-- springdoc.swagger-ui.path=direccion de acceso de la documentación en swagger
-- jwt.secret= secreto con el que serán construidos los token de JWT
-- user.password.regex= expresión regular con la que se verificara el formato correcto de los passwords
-- server.servlet.context-path=contexto de la aplicación 
-- server.port=puerto donde será levantada la aplicación 
+- **spring.datasource.username:** Usuario de la db
+- **spring.datasource.password:** Clave de acceso de la db
+- **spring.h2.console.enabled:** Bandera que habilita la consola de  la db h2
+- **spring.h2.console.path:** Dirección donde será levanta la interfaz de la consola h2
+- **springdoc.swagger-ui.path:** Direccion de acceso de la documentación en swagger
+- **jwt.secret:** Secreto con el que serán construidos los token de JWT
+- **user.password.regex:** Expresión regular con la que se verificara el formato correcto de los passwords
+- **server.servlet.context-path:** Contexto de la aplicación 
+- **server.port:** Puerto donde será levantada la aplicación 
+- **show.internal.api:** Allows you to hide the api Users of the documentation, useful when you want to share only the public documentation to the users.
 
 El archivo schema.sql contiene los query de creación de las tablas asociadas al proyecto 
 
@@ -38,3 +39,13 @@ El archivo schema.sql contiene los query de creación de las tablas asociadas al
 - Moverse al directorio: userapp
 - Ejecutar: mvn spring-boot:run
 - Ir a: http://localhost:8080/company/docs/ui.html
+
+## Descripción de elementos en la documentación 
+swagger nos permite establecer algunas configuración que permiten hacer mas dinámica la documentación. en la siguiente imagen se pueden observar 2 de estos elementos.  
+
+![](https://gitlab.com/josemiguelhidalgo74/userapp/-/blob/main/ui.jpg)
+
+- El primero nos permite movernos entre las distintas versiones, este proyecto tiene 2, una interna identificado con **i1** y una publica identificada con **v1**.
+- El segundo elementó nos permite establecer un token, en este proyecto son tokens de jwt, swagger  sabe esto y internamente el agrega el texto **Bearer** al principio del token antes de realizar una llamada
+
+**Nota:** El método login del Api Myself y el Api interna de Users no requiere un token. 

@@ -1,9 +1,11 @@
 package com.user;
 
 import org.springdoc.core.GroupedOpenApi;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -17,6 +19,9 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 @SecurityScheme(name = "Jwt_Token", scheme = "bearer", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
 public class UserApplication {
 
+	@Autowired
+	private Environment environment;
+
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -24,7 +29,12 @@ public class UserApplication {
 
 	@Bean
 	public GroupedOpenApi i1() {
-		return GroupedOpenApi.builder().group("i1").packagesToScan("com.user.i1").build();
+		if (environment.getProperty("show.internal.api", "true").equalsIgnoreCase("true")) {
+			return GroupedOpenApi.builder().group("i1").packagesToScan("com.user.i1").build();
+		} else {
+			return null;
+		}
+
 	}
 
 	@Bean
