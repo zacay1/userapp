@@ -58,8 +58,6 @@ public class Users {
 			return userService.create(user);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println(e.getClass());
-			System.out.println(e.getMessage());
 			return ProcessExctions.generatErrorResponse(e);
 		}
 
