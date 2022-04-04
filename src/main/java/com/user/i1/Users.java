@@ -79,7 +79,7 @@ public class Users {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ResponseEntity.class)) }) })
 	@PutMapping("/{id}")
 	private ResponseEntity<GenericResponse> update(@PathVariable(name = "id") String userId,
-			@RequestBody UserBody user) {
+			@Valid @RequestBody UserBody user) {
 		try {
 			return userService.update(user, userId);
 		} catch (Exception e) {
