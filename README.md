@@ -35,7 +35,7 @@ El archivo schema.sql contiene los query de creación de las tablas asociadas al
 
 ## Instrucciones para iniciar la aplicación
 
-- Descargar proyecto: git clone https://gitlab.com/josemiguelhidalgo74/userapp.git
+- Descargar proyecto: git clone https://github.com/zacay1/userapp.git
 - Moverse al directorio: userapp
 - Ejecutar: mvn spring-boot:run
 - Ir a: http://localhost:8080/company/docs/ui.html
